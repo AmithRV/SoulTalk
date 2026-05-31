@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>soultalk.blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            base: '#0B0D12',
+                            surface: '#1A1D24',
+                            accent: '#a855f7', // Literary purple
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-brand-base text-gray-200 font-sans antialiased overflow-x-hidden">
+
+    <nav id="navbar"
+        class="fixed w-full z-50 bg-gradient-to-b from-black/90 to-black/0 px-4 md:px-8 h-20 flex items-center justify-between transition-all duration-300 backdrop-blur-sm">
+        <div class="flex items-center gap-8">
+            <a href="#" class="text-2xl font-serif font-bold text-white tracking-tight flex items-center gap-2">
+                <div><span>Soul</span><span class="text-[#a855f7]">Talk</span></div>
+            </a>
+        </div>
+    </nav>
+
+    <header
+        class="relative w-full h-[75vh] min-h-[600px] md:min-h-[500px] flex items-center pt-20 px-4 md:px-12 lg:px-20">
+        <div class="absolute inset-0 z-0">
+            <div
+                class="absolute inset-0 bg-gradient-to-r from-purple-900/40 to-slate-900/40 object-cover w-full h-full">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-base via-brand-base/80 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-base via-brand-base/50 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl w-full">
+            <h1 class="text-5xl md:text-7xl font-serif font-extrabold text-white mb-4 tracking-tight"
+                style="-webkit-text-stroke: 1px rgba(255,255,255,0.1);">The Midnight Anthology</h1>
+            <div class="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium text-gray-400 mb-5">
+                <span class="flex items-center gap-1 text-yellow-500 font-bold bg-yellow-500/10 px-2 py-1 rounded">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                        </path>
+                    </svg>
+                    Editor's Choice
+                </span>
+                <span class="border border-gray-600 px-1.5 py-0.5 rounded">Ages 14+</span>
+                <span>2026</span>
+                <span>&bull;</span>
+                <span>Short Story Collection</span>
+                <span class="border border-gray-600 px-1.5 py-0.5 rounded">Text</span>
+                <span class="border border-gray-600 px-1.5 py-0.5 rounded">Audio Story</span>
+            </div>
+            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl leading-relaxed">
+                A curated collection of thrilling, eerie, and thought-provoking short stories. Unravel the mysteries of
+                time, space, and human nature.
+            </p>
+            <div class="flex flex-wrap items-center gap-4">
+                <button
+                    class="bg-white text-black px-8 py-3.5 rounded-full font-bold text-base hover:bg-gray-200 transition flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                        </path>
+                    </svg>
+                    Read Story
+                </button>
+                <button
+                    class="bg-brand-surface/80 border border-gray-600 backdrop-blur-md text-white px-8 py-3.5 rounded-full font-bold text-base hover:bg-gray-800 transition flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z">
+                        </path>
+                    </svg>
+                    Listen to Preview
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="px-4 md:px-12 lg:px-20 py-1 max-w-[1600px] mx-auto">
+        <section id="read" class="mb-20">
+            <div id="stories-container" class="flex flex-col gap-6">
+            </div>
+        </section>
+
+        <section id="about" class="mb-20 border-t border-gray-800 pt-16">
+            <h2 class="text-2xl font-serif font-bold text-white mb-6">About the Collection</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-lg font-bold text-gray-300 mb-3">Overview</h3>
+                    <p class="text-gray-400 leading-relaxed mb-8">
+                        "The Midnight Anthology" was born from a simple premise: what happens in the spaces between
+                        seconds, in the shadows we ignore, and in the quiet hours when the world sleeps? This premium
+                        collection brings together award-winning authors to explore the unknown.
+                    </p>
+                    <h3 class="text-lg font-bold text-gray-300 mb-3">Reading Experience</h3>
+                    <p class="text-gray-400 leading-relaxed mb-4">
+                        Every story is meticulously formatted for screen readers, mobile devices, and desktop
+                        environments. Immersive audio narration is provided by professional voice actors, allowing you
+                        to seamlessly switch between reading and listening depending on your environment.
+                    </p>
+                    <a href="#" class="text-brand-accent hover:underline font-medium">Explore the Manifesto &rarr;</a>
+                </div>
+                <div class="bg-brand-surface rounded-2xl p-6 border border-gray-800">
+                    <h3 class="text-xl font-serif font-bold text-white mb-6 border-b border-gray-700 pb-4">Contributing
+                        Authors</h3>
+                    <ul class="space-y-4 max-h-[300px] overflow-y-auto pr-4 custom-scrollbar text-sm">
+                        <li class="flex justify-between">
+                            <span class="text-white font-medium">Elias Thorne</span>
+                            <span class="text-gray-500">Author, "Echoes of Titan"</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-white font-medium">Sarah Jenkins</span>
+                            <span class="text-gray-500">Author, "Train to Nowhere"</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-white font-medium">Marcus Vance</span>
+                            <span class="text-gray-500">Author, "Coffee & Cyanide"</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-white font-medium">Elena Rostova</span>
+                            <span class="text-gray-500">Editor-in-Chief</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-white font-medium">David Atten</span>
+                            <span class="text-gray-500">Audiobook Narrator</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-20 border-t border-gray-800 pt-16 max-w-4xl">
+            <h2 class="text-2xl font-serif font-bold text-white mb-8">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <div class="bg-brand-surface rounded-xl p-6 border border-gray-800">
+                    <h3 class="font-bold text-lg text-white mb-2">Can I read these stories offline?</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Yes! Premium subscribers can download stories to their local devices using the Whispering Pages
+                        app, available on iOS and Android, ensuring your reading experience is never interrupted by a
+                        lost connection.
+                    </p>
+                </div>
+                <div class="bg-brand-surface rounded-xl p-6 border border-gray-800">
+                    <h3 class="font-bold text-lg text-white mb-2">Can I submit my own short stories?</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        We open for public submissions twice a year (Spring and Autumn). Keep an eye on our "Community"
+                        page for guidelines on word count, themes, and compensation details.
+                    </p>
+                </div>
+                <div class="bg-brand-surface rounded-xl p-6 border border-gray-800">
+                    <h3 class="font-bold text-lg text-white mb-2">How does the audiobook sync work?</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Our platform automatically saves your progress. If you stop reading on paragraph four, pressing
+                        "Play Audio" will resume the narration from exactly that spot.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black border-t border-gray-900 pt-16 pb-8">
+        <div class="max-w-[1600px] mx-auto px-4 md:px-12 lg:px-20">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-600">
+                <p>&copy; 2026 SoulTalk. All Rights Reserved.</p>
+                <div class="flex gap-4">
+                    <span>Read Anytime. Anywhere.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.remove('bg-gradient-to-b', 'from-black/90', 'to-black/0');
+                nav.classList.add('bg-black/95', 'shadow-lg', 'border-b', 'border-gray-800');
+            } else {
+                nav.classList.add('bg-gradient-to-b', 'from-black/90', 'to-black/0');
+                nav.classList.remove('bg-black/95', 'shadow-lg', 'border-b', 'border-gray-800');
+            }
+        });
+    </script>
+
+    <style>
+        /* Custom scrollbar for inner div */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #1A1D24;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #374151;
+            border-radius: 10px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #a855f7;
+        }
+
+        /* Hide scrollbar for horizontal scroll areas but keep functionality */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+    </style>
+
+    <script>
+        // 1. Define your array of story objects
+        const stories = [
+            {
+                title: "The Echoes of Titan",
+                description: "When the first colony ship landed on Saturn's largest moon, they expected ice and rock. They didn't expect to hear the transmission of their own voices bouncing back from the depths—voices speaking of events that hadn't happened yet.",
+                imageSrc: "data:image/jpeg;base64,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" // Truncated for readability
+            },
+            {
+                title: "Train to Nowhere",
+                description: "Every night at 3:14 AM, a phantom train rattles past Sarah's apartment. It doesn't appear on any map, nor does it have a schedule. Tonight, she decided to buy a ticket.",
+                imageSrc: "data:image/jpeg;base64,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"
+            },
+            {
+                title: "Coffee & Cyanide",
+                description: "The barista at the corner cafe knows exactly how everyone will die. It's a heavy burden, until a customer walks in with a future that is completely blank.",
+                imageSrc: "data:image/jpeg;base64,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"
+            }
+        ];
+
+        // 2. Select the container
+        const container = document.getElementById('stories-container');
+
+        // 3. Map over the array, inject the variables, and render the HTML
+        container.innerHTML = stories.map(story => `
+        <a href="/stories/story1.html" class="group flex flex-col md:flex-row gap-6 p-4 rounded-lg hover:bg-brand-surface transition cursor-pointer border border-transparent hover:border-gray-800">
+            
+            <div class="relative w-[200px] h-[200px] md:h-auto bg-gray-800 rounded-xl overflow-hidden flex-shrink-0">
+                <img src="${story.imageSrc}" alt="Cover art for ${story.title}" class="w-full h-full object-cover" />
+            </div>
+            
+            <div class="flex flex-col">
+                <h3 class="text-xl md:text-2xl font-serif font-bold group-hover:text-yellow-500 mb-3 text-brand-accent transition-colors">
+                    ${story.title}
+                </h3>
+                <p class="text-gray-400 text-sm md:text-base leading-relaxed line-clamp-3">
+                    ${story.description}
+                </p>
+            </div>
+            
+        </a>
+    `).join(''); // .join('') removes the commas between array items
+    </script>
+</body>
+
+</html>
