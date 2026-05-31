@@ -327,6 +327,21 @@
             });
         });
     </script>
+
+    <script>
+        const UPDATE_API_URL =
+            'http://soul-talk-admin.vercel.app/api/public-api/update-views';
+
+        fetch(UPDATE_API_URL, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                id: '6a1c17032a6476656e17b34f'
+            })
+        })
+    </script>
 </body>
 
 </html>
