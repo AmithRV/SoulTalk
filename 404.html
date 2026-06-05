@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 | SoulTalk</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-zinc-950 text-zinc-100 flex items-center justify-center px-6">
+
+    <!-- Background Glow -->
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute top-20 left-1/2 -translate-x-1/2 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <main class="relative max-w-2xl text-center">
+
+        <!-- 404 -->
+        <div
+            class="text-8xl md:text-9xl font-black tracking-tight bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+            404
+        </div>
+
+        <!-- Heading -->
+        <h1 class="mt-6 text-4xl md:text-5xl font-bold">
+            You've reached a quiet corner.
+        </h1>
+
+        <!-- Description -->
+        <p class="mt-6 text-lg text-zinc-400 leading-relaxed">
+            The page you're looking for seems to have drifted away into the digital void.
+            It may have been moved, renamed, or never existed in the first place.
+        </p>
+
+        <!-- Quote -->
+        <blockquote class="mt-8 text-zinc-500 italic">
+            "Not all who wander are lost. Some pages are simply being rewritten."
+        </blockquote>
+
+        <!-- Buttons -->
+        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+
+            <a href="/"
+                class="px-8 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-semibold transition-all duration-300 shadow-lg shadow-emerald-500/20">
+                Return Home
+            </a>
+
+            <button onclick="history.back()"
+                class="px-8 py-3 rounded-xl border border-zinc-700 hover:border-zinc-500 hover:bg-zinc-900 transition-all duration-300">
+                Go Back
+            </button>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-16 border-t border-zinc-800 pt-6">
+            <p class="text-sm text-zinc-500">
+                SoulTalk • Reflections, stories, and ideas for a mindful life.
+            </p>
+        </div>
+
+    </main>
+
+</body>
+
+</html>
