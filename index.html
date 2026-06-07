@@ -43,7 +43,7 @@
 <body class="bg-brand-base text-gray-200 font-sans antialiased overflow-x-hidden">
 
     <nav id="navbar"
-        class="fixed w-full z-50 bg-gradient-to-b from-black/90 to-black/0 px-4 md:px-8 h-20 flex items-center justify-between transition-all duration-300 backdrop-blur-sm">
+        class="fixed w-full z-50 bg-linear-to-b from-black/90 to-black/0 px-4 md:px-8 h-20 flex items-center justify-between transition-all duration-300 backdrop-blur-sm">
         <div class="flex items-center gap-8">
             <a href="#" class="text-2xl font-serif font-bold text-white tracking-tight flex items-center gap-2">
                 <div><span>Soul</span><span class="text-[#a855f7]">Talk</span></div>
@@ -51,14 +51,12 @@
         </div>
     </nav>
 
-    <header
-        class="relative w-full h-[75vh] min-h-[600px] md:min-h-[500px] flex items-center pt-20 px-4 md:px-12 lg:px-20">
+    <header class="relative w-full h-[75vh] min-h-150 md:min-h-125 flex items-center pt-20 px-4 md:px-12 lg:px-20">
         <div class="absolute inset-0 z-0">
-            <div
-                class="absolute inset-0 bg-gradient-to-r from-purple-900/40 to-slate-900/40 object-cover w-full h-full">
+            <div class="absolute inset-0 bg-linear-to-r from-purple-900/40 to-slate-900/40 object-cover w-full h-full">
             </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-brand-base via-brand-base/80 to-transparent"></div>
-            <div class="absolute inset-0 bg-gradient-to-r from-brand-base via-brand-base/50 to-transparent"></div>
+            <div class="absolute inset-0 bg-linear-to-t from-brand-base via-brand-base/80 to-transparent"></div>
+            <div class="absolute inset-0 bg-linear-to-r from-brand-base via-brand-base/50 to-transparent"></div>
         </div>
 
         <div class="relative z-10 max-w-4xl w-full">
@@ -107,7 +105,7 @@
         </div>
     </header>
 
-    <main class="px-4 md:px-12 lg:px-20 py-1 max-w-[1600px] mx-auto">
+    <main class="px-4 md:px-12 lg:px-20 py-1 max-w-400 mx-auto">
         <section id="read" class="mb-20">
             <div id="stories-container" class="flex flex-col gap-6">
             </div>
@@ -184,7 +182,7 @@
     </main>
 
     <footer class="bg-black border-t border-gray-900 pt-16 pb-8">
-        <div class="max-w-[1600px] mx-auto px-4 md:px-12 lg:px-20">
+        <div class="max-w-400 mx-auto px-4 md:px-12 lg:px-20">
             <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-600">
                 <p>&copy; 2026 SoulTalk. All Rights Reserved.</p>
                 <div class="flex gap-4">
@@ -273,8 +271,12 @@
         const container = document.getElementById('stories-container');
 
         // 3. Map over the array, inject the variables, and render the HTML
-        container.innerHTML = stories.map(story => `
-        <a href="${story.link}" class="group flex flex-col md:flex-row gap-6 p-4 rounded-lg hover:bg-brand-surface transition cursor-pointer border border-transparent hover:border-gray-800">
+        container.innerHTML = stories.map((story, index) => `
+        <a 
+            href="${story.link}" 
+            class="group flex flex-col md:flex-row gap-6 p-4 rounded-lg hover:bg-brand-surface transition cursor-pointer border border-transparent hover:border-gray-800"
+            style="border:1px solid #181818"
+        >
             
             <div class="relative w-[200px] h-[200px] md:h-auto bg-gray-800 rounded-xl overflow-hidden flex-shrink-0">
                 <img src="${story.imageSrc}" alt="Cover art for ${story.title}" class="w-full h-full object-cover" alt="${story.title}"/>
@@ -284,6 +286,7 @@
                 <h3 class="text-xl md:text-2xl font-serif font-bold group-hover:text-yellow-500 mb-3 text-brand-accent transition-colors">
                     ${story.title}
                 </h3>
+                
                 <p class="text-gray-400 text-sm md:text-base leading-relaxed line-clamp-3">
                     ${story.description}
                 </p>
