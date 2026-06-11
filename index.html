@@ -12,6 +12,11 @@
         gtag('config', 'G-JB8VEN861P');
     </script>
 
+    <script>
+        // Explicitly defining a global variable
+        window.domain = "https://soul-talk-admin.vercel.app";
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>soultalk.blog</title>
@@ -54,7 +59,7 @@
         </div>
     </nav>
 
-    <header class="relative w-full h-[75vh] min-h-150 md:min-h-125 flex items-center pt-20 px-4 md:px-12 lg:px-20">
+    <header class="relative w-full h-[55vh] min-h-150 md:min-h-125 flex items-center pt-20 px-4 md:px-12 lg:px-20">
         <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 bg-linear-to-r from-purple-900/40 to-slate-900/40 object-cover w-full h-full">
             </div>
@@ -85,28 +90,16 @@
                 A curated collection of thrilling, eerie, and thought-provoking short stories. Unravel the mysteries of
                 time, space, and human nature.
             </p>
-            <div class="flex flex-wrap items-center gap-4">
-                <button
-                    class="bg-white text-black px-8 py-3.5 rounded-full font-bold text-base hover:bg-gray-200 transition flex items-center gap-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
-                        </path>
-                    </svg>
-                    Read Story
-                </button>
-                <button
-                    class="bg-brand-surface/80 border border-gray-600 backdrop-blur-md text-white px-8 py-3.5 rounded-full font-bold text-base hover:bg-gray-800 transition flex items-center gap-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z">
-                        </path>
-                    </svg>
-                    Listen to Story
-                </button>
-            </div>
+
+
+            <section class="mb-4">
+                <div class="flex flex-wrap gap-3" id="categories-container"></div>
+            </section>
         </div>
+
     </header>
+
+
 
     <main class="px-4 md:px-12 lg:px-20 py-1 max-w-400 mx-auto">
         <section id="read" class="mb-20">
@@ -306,6 +299,51 @@
     
         </a>
     `).join(''); // .join('') removes the commas between array items
+    </script>
+
+    <script>
+        async function loadCategories() {
+            try {
+                const UPDATE_API_URL = `${domain}/api/categories/list-categories`;
+
+                const response = await fetch(
+                    UPDATE_API_URL);
+
+                const result = await response.json();
+
+                const categories = [
+                    'All',
+                    ...result.data.map(category => category.name)
+                ];
+
+                const categoriesContainer =
+                    document.getElementById('categories-container');
+
+                categoriesContainer.innerHTML = categories
+                    .map(
+                        (category, index) => `
+                    <button
+                        data-category="${category}"
+                        class="
+                            category-btn
+                            px-4 py-2 rounded-full font-medium transition
+                            ${index === 0
+                                ? 'bg-purple-600 text-white'
+                                : 'bg-brand-surface border border-gray-700 text-gray-300'
+                            }
+                        "
+                    >
+                        ${category}
+                    </button>
+                `
+                    )
+                    .join('');
+            } catch (error) {
+                console.error('Failed to load categories:', error);
+            }
+        }
+
+        loadCategories();
     </script>
 </body>
 
