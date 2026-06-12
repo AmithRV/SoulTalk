@@ -114,71 +114,57 @@
     </script>
 
     <script>
-        //
-        const stories = [
-            {
-                title: "The Sea and the Sand",
-                link: '/stories/the-sea-and-the-sand.html',
-                description: `On the seashore, there was a fisherman, a child, an old man, and a mother. While playing, when a wave washed away the child's sandal, the child wrote on the sand: "The sea is a thief." When the fisherman caught fish, he wrote: "The sea is the provider of food." When the mother's son drowned in the sea, she wrote that "The sea is a murderer." When the old man found an invaluable pearl, he wrote: "The sea is a great giver." A wave came and washed away everything they had written. Then the wave said to them: "The sea is none of the things you write."`,
-                imageSrc: "/public/assets/the-sea-and-the-sand.png"
-            },
-            {
-                title: "A Miracle at the End of Patience",
-                link: '/stories/a-miracle-at-the-end-of-patience.html',
-                description: `It’s a familiar scene in any restaurant: a customer walks in and places an order, only for the waiter to seemingly vanish. A little while later, a boisterous group of young people arrives and places their orders, too. As the first customer's wait stretches on, the noisy group that arrived after him is actually served their meals. They chat loudly, and sitting there at an empty table, the first man begins to feel a creeping suspicion that they are laughing at him.`,
-                imageSrc: "/public/assets/a-miracle-at-the-end-of-patience.png"
-            },
-            {
-                title: "The Measure of True Wisdom",
-                link: '/stories/the-measure-of-true-wisdom.html',
-                description: `A scholar once challenged the wise Nasreddin Hodja to a debate. Hodja readily accepted the invitation, carefully noting down the date and time. However, when the day arrived and the scholar showed up exactly on schedule, he found Hodja's house locked and empty. Furious at being stood up, the scholar grabbed a piece of chalk, scrawled "Absolute Idiot" across Hodja's door, and stormed off.`,
-                imageSrc: "/public/assets/the-measure-of-true-wisdom.png"
-            },
-            {
-                title: "Beware the Sudden Saint: The Danger of Rapid Change",
-                link: '/stories/beware-the-sudden-saint.html',
-                description: `Even though a house cat had caught nearly all the mice in a home, one clever mouse managed to slip away. To catch it, the cat employed a cunning trick: it sat in deep meditation, taking on the guise of a holy sage. Seeing this, the cautious mouse approached and asked, "Have you become a sage now? It is good that you are washing away all your past sins." In a single pounce, the cat caught the mouse. As it struggled, the mouse cried out, "Didn't you become a sage?" The cat simply replied, "I am a sage only when I am not hungry."`,
-                imageSrc: "/public/assets/beware-the-sudden-saint.png"
-            },
+        async function loadCategories() {
+            try {
+                const PAGES_API_URL = `${domain}/api/public-api/pages?categoryId=6a2b99c93993cd0f4272a88d`;
 
-        ];
+                const response = await fetch(PAGES_API_URL);
 
-        //
-        const container = document.getElementById('stories-container');
+                const result = await response.json();
 
-        // 3. Map over the array, inject the variables, and render the HTML
-        container.innerHTML = stories.map((story, index) => `
-        <a 
-            href="${story.link}" 
-            class="group flex flex-col md:flex-row gap-6 p-4 rounded-lg hover:bg-brand-surface transition cursor-pointer border border-transparent hover:border-gray-800"
-            style="border:1px solid #181818"
-        >
-            
-            <div class="relative w-[200px] h-[200px] md:h-auto bg-gray-800 rounded-xl overflow-hidden flex-shrink-0">
-                <img src="${story.imageSrc}" alt="Cover art for ${story.title}" class="w-full h-full object-cover" alt="${story.title}"/>
-            </div>
-    
-            <div class="flex flex-col flex-grow">
-                <h3 class="text-xl md:text-2xl font-serif font-bold group-hover:text-yellow-500 mb-3 text-brand-accent transition-colors">
-                    ${story.title}
-                </h3>
-                
-                <p class="text-gray-400 text-sm md:text-base leading-relaxed line-clamp-3">
-                    ${story.description}
-                </p>
-                
-                 <div class="mt-auto pt-5">
-                    <span class="inline-flex items-center justify-center px-6 py-2 text-sm font-semibold text-gray-900 bg-yellow-500 rounded-full group-hover:bg-yellow-400 transition-colors">
-                        Read Now
-                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                        </svg>
-                    </span>
-                </div>
-            </div>
-    
-        </a>
-    `).join(''); // .join('') removes the commas between array items
+                const stories = result.data.pages;
+
+                const container = document.getElementById('stories-container');
+
+                // 3. Map over the array, inject the variables, and render the HTML
+                container.innerHTML = stories.map((story, index) => `
+                        <a 
+                            href="${story.url}" 
+                            class="group flex flex-col md:flex-row gap-6 p-4 rounded-lg hover:bg-brand-surface transition cursor-pointer border border-transparent hover:border-gray-800"
+                            style="border:1px solid #181818"
+                        >
+                            
+                            <div class="relative w-[200px] h-[200px] md:h-auto bg-gray-800 rounded-xl overflow-hidden flex-shrink-0">
+                                <img src="/public/assets/${story.imageName}" alt="Cover art for ${story.name}" class="w-full h-full object-cover" alt="${story.title}"/>
+                            </div>
+                    
+                            <div class="flex flex-col flex-grow">
+                                <h3 class="text-xl md:text-2xl font-serif font-bold group-hover:text-yellow-500 mb-3 text-brand-accent transition-colors">
+                                    ${story.name}
+                                </h3>
+                                
+                                <p class="text-gray-400 text-sm md:text-base leading-relaxed line-clamp-3">
+                                    ${story.description}
+                                </p>
+                                
+                                <div class="mt-auto pt-5">
+                                    <span class="inline-flex items-center justify-center px-6 py-2 text-sm font-semibold text-gray-900 bg-yellow-500 rounded-full group-hover:bg-yellow-400 transition-colors">
+                                        Read Now
+                                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+                    
+                        </a>
+                `).join(''); // .join('') removes the commas between array items
+            } catch (error) {
+                console.error('Failed to load categories:', error);
+            }
+        }
+
+        loadCategories();
     </script>
 
     <style>
