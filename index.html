@@ -304,17 +304,16 @@
     <script>
         async function loadCategories() {
             try {
-                const UPDATE_API_URL = `${domain}/api/public-api/categories/list-categories`;
+                const CATEGORIES_API_URL = `${domain}/api/public-api/categories/list-categories`;
 
-                const response = await fetch(
-                    UPDATE_API_URL);
+                const response = await fetch(CATEGORIES_API_URL);
 
                 const result = await response.json();
 
-                const categories = [
-                    'All',
-                    ...result.data.map(category => category.name)
-                ];
+                const categories = [{
+                    "name": 'All',
+                    "path": "#"
+                }, ...result.data];
 
                 const categoriesContainer =
                     document.getElementById('categories-container');
@@ -322,8 +321,9 @@
                 categoriesContainer.innerHTML = categories
                     .map(
                         (category, index) => `
-                    <button
-                        data-category="${category}"
+                    <a
+                        href="${category.path}"
+                        data-category="${category.name}"
                         class="
                             category-btn
                             px-4 py-2 rounded-full font-medium transition
@@ -333,8 +333,8 @@
                             }
                         "
                     >
-                        ${category}
-                    </button>
+                        ${category.name}
+                    </a>
                 `
                     )
                     .join('');
