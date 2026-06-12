@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JB8VEN861P"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-JB8VEN861P');
+    </script>
+
+    <script>
+        // Explicitly defining a global variable
+        window.domain = "https://soul-talk-admin.vercel.app";
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markets & Global Insights</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="icon" type="image/png" href="../favicon.ico">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            base: '#0B0D12',
+                            surface: '#1A1D24',
+                            accent: '#a855f7', // Literary purple
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-brand-base text-gray-200 font-sans antialiased overflow-x-hidden">
+
+    <nav id="navbar"
+        class="fixed w-full z-50 bg-linear-to-b from-black/90 to-black/0 px-4 md:px-8 h-20 flex items-center justify-between transition-all duration-300 backdrop-blur-sm">
+        <div class="flex items-center gap-8">
+            <a href="#" class="text-2xl font-serif font-bold text-white tracking-tight flex items-center gap-2">
+                <div><span>Soul</span><span class="text-[#a855f7]">Talk</span></div>
+            </a>
+        </div>
+    </nav>
+
+    <header class="relative w-full h-[55vh] min-h-150 md:min-h-125 flex items-center pt-20 px-4 md:px-12 lg:px-20">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-linear-to-r from-purple-900/40 to-slate-900/40 object-cover w-full h-full">
+            </div>
+            <div class="absolute inset-0 bg-linear-to-t from-brand-base via-brand-base/80 to-transparent"></div>
+            <div class="absolute inset-0 bg-linear-to-r from-brand-base via-brand-base/50 to-transparent"></div>
+        </div>
+
+        <!-- PAGE HERO -->
+        <section>
+            <div class="flex items-center gap-3 text-xs text-gray-400 mb-4">
+                <span class="bg-yellow-900/20 text-yellow-500 px-2 py-1 rounded font-bold">Macro Analysis</span>
+                <span>Weekly Update • 2026 • Expert Columns</span>
+            </div>
+            <h1 class="text-5xl font-extrabold text-white mb-6">Markets & Global Insights</h1>
+            <p class="text-gray-400 max-w-2xl text-lg">
+                Deep dive analysis of interconnected markets, global economic shifts, and geopolitical forces shaping
+                the future of finance.
+            </p>
+        </section>
+
+    </header>
+
+    <main class="px-4 md:px-12 lg:px-20 py-1 max-w-400 mx-auto">
+        <section id="read" class="mb-20">
+            <div id="stories-container" class="flex flex-col gap-6">
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black border-t border-gray-900 pt-16 pb-8">
+        <div class="max-w-400 mx-auto px-4 md:px-12 lg:px-20">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-600">
+                <p>&copy; 2026 SoulTalk. All Rights Reserved.</p>
+                <div class="flex gap-4">
+                    <span>Read Anytime. Anywhere.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.remove('bg-gradient-to-b', 'from-black/90', 'to-black/0');
+                nav.classList.add('bg-black/95', 'shadow-lg', 'border-b', 'border-gray-800');
+            } else {
+                nav.classList.add('bg-gradient-to-b', 'from-black/90', 'to-black/0');
+                nav.classList.remove('bg-black/95', 'shadow-lg', 'border-b', 'border-gray-800');
+            }
+        });
+    </script>
+
+    <script>
+        //
+        const stories = [
+            {
+                title: "The Sea and the Sand",
+                link: '/stories/the-sea-and-the-sand.html',
+                description: `On the seashore, there was a fisherman, a child, an old man, and a mother. While playing, when a wave washed away the child's sandal, the child wrote on the sand: "The sea is a thief." When the fisherman caught fish, he wrote: "The sea is the provider of food." When the mother's son drowned in the sea, she wrote that "The sea is a murderer." When the old man found an invaluable pearl, he wrote: "The sea is a great giver." A wave came and washed away everything they had written. Then the wave said to them: "The sea is none of the things you write."`,
+                imageSrc: "/public/assets/the-sea-and-the-sand.png"
+            },
+            {
+                title: "A Miracle at the End of Patience",
+                link: '/stories/a-miracle-at-the-end-of-patience.html',
+                description: `It’s a familiar scene in any restaurant: a customer walks in and places an order, only for the waiter to seemingly vanish. A little while later, a boisterous group of young people arrives and places their orders, too. As the first customer's wait stretches on, the noisy group that arrived after him is actually served their meals. They chat loudly, and sitting there at an empty table, the first man begins to feel a creeping suspicion that they are laughing at him.`,
+                imageSrc: "/public/assets/a-miracle-at-the-end-of-patience.png"
+            },
+            {
+                title: "The Measure of True Wisdom",
+                link: '/stories/the-measure-of-true-wisdom.html',
+                description: `A scholar once challenged the wise Nasreddin Hodja to a debate. Hodja readily accepted the invitation, carefully noting down the date and time. However, when the day arrived and the scholar showed up exactly on schedule, he found Hodja's house locked and empty. Furious at being stood up, the scholar grabbed a piece of chalk, scrawled "Absolute Idiot" across Hodja's door, and stormed off.`,
+                imageSrc: "/public/assets/the-measure-of-true-wisdom.png"
+            },
+            {
+                title: "Beware the Sudden Saint: The Danger of Rapid Change",
+                link: '/stories/beware-the-sudden-saint.html',
+                description: `Even though a house cat had caught nearly all the mice in a home, one clever mouse managed to slip away. To catch it, the cat employed a cunning trick: it sat in deep meditation, taking on the guise of a holy sage. Seeing this, the cautious mouse approached and asked, "Have you become a sage now? It is good that you are washing away all your past sins." In a single pounce, the cat caught the mouse. As it struggled, the mouse cried out, "Didn't you become a sage?" The cat simply replied, "I am a sage only when I am not hungry."`,
+                imageSrc: "/public/assets/beware-the-sudden-saint.png"
+            },
+
+        ];
+
+        //
+        const container = document.getElementById('stories-container');
+
+        // 3. Map over the array, inject the variables, and render the HTML
+        container.innerHTML = stories.map((story, index) => `
+        <a 
+            href="${story.link}" 
+            class="group flex flex-col md:flex-row gap-6 p-4 rounded-lg hover:bg-brand-surface transition cursor-pointer border border-transparent hover:border-gray-800"
+            style="border:1px solid #181818"
+        >
+            
+            <div class="relative w-[200px] h-[200px] md:h-auto bg-gray-800 rounded-xl overflow-hidden flex-shrink-0">
+                <img src="${story.imageSrc}" alt="Cover art for ${story.title}" class="w-full h-full object-cover" alt="${story.title}"/>
+            </div>
+    
+            <div class="flex flex-col flex-grow">
+                <h3 class="text-xl md:text-2xl font-serif font-bold group-hover:text-yellow-500 mb-3 text-brand-accent transition-colors">
+                    ${story.title}
+                </h3>
+                
+                <p class="text-gray-400 text-sm md:text-base leading-relaxed line-clamp-3">
+                    ${story.description}
+                </p>
+                
+                 <div class="mt-auto pt-5">
+                    <span class="inline-flex items-center justify-center px-6 py-2 text-sm font-semibold text-gray-900 bg-yellow-500 rounded-full group-hover:bg-yellow-400 transition-colors">
+                        Read Now
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+    
+        </a>
+    `).join(''); // .join('') removes the commas between array items
+    </script>
+
+    <style>
+        /* Custom scrollbar for inner div */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #1A1D24;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #374151;
+            border-radius: 10px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #a855f7;
+        }
+
+        /* Hide scrollbar for horizontal scroll areas but keep functionality */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+    </style>
+
+
+</body>
+
+</html>
