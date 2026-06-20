@@ -36,9 +36,16 @@
     <priority>0.8</priority>
   </url>
 
-    <url>
+  <url>
     <loc>https://soultalk.blog/markets-global-insights/where-does-money-go-when-stocks-fall.html</loc>
     <lastmod>2026-06-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://soultalk.blog/markets-global-insights/elon-musk-the-first-trillionaire.html</loc>
+    <lastmod>2026-06-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
